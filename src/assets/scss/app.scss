@@ -1,0 +1,855 @@
+// Помощники
+// @import 'mixins/mixins';//миксины scss
+@import 'main/stylesheet';// шрифты
+// @import 'main/parameters';// переменные
+
+//Общее
+@import 'main/reset'; // сброс стилей для кроссбраузерности
+// @import 'main/common'; // общие стили
+// @import 'main/grid'; // базовая 12ти колоночная сетка для сайта(сделана на основе bootstrap), классы .container/.row/.col-md-6 и т.д.
+
+//Компоненты(все файлы в папке components) -> добавляются автоматически в стили, импортить сюда их не нужно
+
+// дальше можно писать все стили сайта в этот файл, или писать их в компонентах
+
+$color-dark: #111111;
+$color-base: #3D4853;
+$color-white: #ffffff;
+
+$bg-color-dark: $color-dark;
+$bg-color-light: $color-white;
+$bg-special: $color-base;
+
+$text-color: $color-base;
+$color-dark: $color-dark;
+$color-light: $color-white;
+$color-light-special: #BDCAD8;
+
+body {
+  font-family: 'Roboto';
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1288px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+%section-title {
+  font-size: 72px;
+  line-height: 86px;
+  font-weight: 400;
+  color: $color-dark;
+}
+%section-slogan {
+  font-size: 12px;
+  line-height: 17px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+%btn {
+  text-align: center;
+  display: inline-block;
+  font-size: 10px;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: $text-color;
+  background: $bg-color-light;
+  border-radius: 5px;
+  line-height: 11px;
+  height: 34px;
+  &:hover {
+    background: darken($color: $bg-color-light, $amount: 10)
+  }
+}
+%text-gradient {
+  background: rgb(235,144,56);
+  background: radial-gradient(circle, rgba(235,144,56,1) 0%, rgba(243,192,198,1) 33%, rgba(243,195,207,1) 66%, rgba(141,196,243,1) 100%);
+}
+
+.header {
+  background-color: $bg-color-dark;
+  padding: 5px 0;
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__navigation {
+    color: $color-light;
+    display: flex;
+  }
+  &__navigation-check {
+    display: none;
+  }
+  &__navigation-label {
+    display: none;
+  }
+  &__navigation-list {
+    display: flex;
+  }
+  &__navigation-item {
+    display: inline-block;
+  }
+  &__navigation-link {
+    font-size: 16px;
+    line-height: 16px;  
+    margin-right: 50px;
+  }
+  &__login {
+    @extend %btn;
+    padding: 10px 15px 13px;
+    margin-right: 14px;
+  }
+}
+
+.first {
+  background-color: $bg-color-dark;
+  padding-bottom: 46px;
+  padding-top: 108px;
+  &__slogan {
+    margin-bottom: 165px;
+    font-size: 157px;
+    line-height: 163px;
+    background-color: $bg-color-dark;
+    color: $color-light;
+    mix-blend-mode: darken;
+  }
+  &__slogan-layer {
+    max-width: 1000px;
+    @extend %text-gradient;
+  }
+  &__gallery {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 -10px;
+    margin-bottom: 122px;
+  }
+  &__gallery-img {
+    position: relative;
+    padding: 0 10px;
+    &:nth-child(1) {
+      bottom: 73px;
+    }
+    &:nth-child(2) {
+      bottom: 41px;
+    }
+    &:nth-last-child(1) {
+      bottom: 73px;
+    }
+    &:nth-last-child(2) {
+      bottom: 41px;
+    }
+  }
+  &__gallery-picture {
+    border-radius: 30px;
+    max-width: 100%;
+  }
+  &__title-layer {
+    margin: 0 auto 24px;
+    max-width: 800px;
+    @extend %text-gradient;
+  }
+  &__btn {
+    @extend %btn;
+    font-size: 13px;
+    line-height: 14px;
+    padding: 14px 24px 19px;
+    height: 48px;
+    max-width: 182px;
+    display: block;
+    margin: 0 auto 120px;
+  }
+  &__title {
+    font-size: 36px;
+    line-height: 56px;
+    font-weight: 400;
+    text-align: center;
+    background-color: $bg-color-dark;
+    color: $color-light;
+    mix-blend-mode: darken;
+  }
+  &__business-card {
+    position: relative;
+    min-height: 966px;
+  }
+  &__business-card-img {
+    max-width: 100%;
+  }
+  &__business-card--front {
+    position: absolute;
+    left: 9%;
+  }
+  &__business-card--back {
+    margin-top: 90px;
+    position: absolute;
+    top: 404px;
+    right: 9%;
+  }
+}
+
+.company {
+  background-color: $bg-color-light;
+  padding: 112px 0;
+  &__slogan {
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #111111;
+    margin-bottom: 25px;
+  }
+  &__wrapper {
+    max-width: 980px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__wrapper-img {
+    display: flex;
+    align-items: center;
+  }
+  &__logo {
+    max-width: 100%;
+  }
+}
+
+.custom {
+  background-color: $bg-color-light;
+  background: radial-gradient(100% 100% at 18.54% 0%, rgba(141, 196, 243, 0.62) 20.83%, rgba(234, 151, 78, 0.65) 46.35%, #E4C3D4 86.98%);
+  &__wrapper {
+    background:url(../imgs/custom/custom-foto.jpg);
+  background-repeat: no-repeat;
+  background-position: 0 center;
+  }
+  &__inner {
+    padding: 274px 0;
+    max-width: 572px;
+    margin-left: auto;
+  }
+  &__slogan {
+    @extend %section-slogan;
+    color: #111111;
+    margin-bottom: 13px;
+  }
+  &__title {
+    @extend %section-title;
+    max-width: 490px;
+    margin-bottom: 36px;
+  }
+  &__text {
+    font-size: 24px;
+    line-height: 36px;
+    color: #111111;
+  }
+}
+
+.products {
+  background-color: $bg-color-dark;
+  color: #BABABA;
+    padding: 232px 0 214px;
+  &__wraper {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__content {
+    max-width: 570px;
+  }
+  &__slogan {
+    @extend %section-slogan;
+    text-align: center;
+    color: #FFFFFF;
+    margin-bottom: 16px;
+  }
+  &__title {
+    @extend %section-title;
+    max-width: 520px;
+    margin: 0 auto;
+    text-align: center;
+    color: $color-light;
+    margin-bottom: 30px;
+  }
+  &__text {
+    font-size: 24px;
+    line-height: 36px;
+    text-align: center;
+    color: #BABABA;
+    margin: 0 15px;
+  }
+  &__aside {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 205px;
+  }
+  &__aside-cell {
+    min-width: 70px;
+    margin-bottom: 78px;
+    display: flex;
+    &:nth-child(odd) {
+      margin-right: 50px;
+    }
+  }
+  &__aside-icon {
+    display: inline-block;
+    margin: 0 auto;
+  }
+}
+
+.experience {
+  padding: 175px 0 142px;
+  background: $bg-color-light;
+  color: $color-dark;
+  &__slogan {
+    @extend %section-slogan;
+    margin-bottom: 20px;
+  }
+  &__title {
+    @extend %section-title;
+    max-width: 654px;
+    margin-bottom: 50px;
+  }
+  &__text {
+    padding: 20px 0 80px 24px;
+    font-size: 24px;
+    line-height: 36px;
+    max-width: 510px;
+  }
+  &__example {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 -30px;
+    margin-bottom: 182px;
+  }
+  &__example-box {
+    max-width: 640px;
+  }
+  &__img {
+    max-width: 100%;
+  }
+  &__advantages {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 -20px;
+  }
+  &__advantages-box {
+    max-width: 385px;
+    position: relative;
+    margin: 0 20px;
+    &:nth-child(1)::before {
+      content: "";
+      position: absolute;
+      height: 36px;
+      width: 36px;
+      display: inline-block;
+      background-color: #FCECDC;
+      border-radius: 50%;
+      top: -46px;
+      left: 0;
+    }
+    &:nth-child(2)::before {
+      content: "";
+      position: absolute;
+      height: 36px;
+      width: 36px;
+      display: inline-block;
+      background-color: #EAF4FC;
+      border-radius: 50%;
+      top: -46px;
+      left: 0;
+    }
+    &:nth-child(3)::before {
+      content: "";
+      position: absolute;
+      height: 36px;
+      width: 36px;
+      display: inline-block;
+      background-color: #FBEDF1;
+      border-radius: 50%;
+      top: -46px;
+      left: 0;
+    }
+  }
+  &__advantages-title {
+    font-size: 36px;
+    line-height: 48px;
+    max-width: 315px;
+    margin-bottom: 24px;
+  }
+  &__advantages-text {
+    font-size: 16px;
+    line-height: 26px;
+  }
+}
+
+.offer {
+  background-color: $bg-special;
+  padding: 20px 0;
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    min-height: 676px;
+    background-image: url(../imgs/offer/offer-foto.jpg);
+    background-repeat: no-repeat;
+    background-position: 83% center;
+    position: relative;
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      right: 3%;
+      top: 69.5%;
+      width: 358px;
+      height: 183px;
+      background-image: url(../imgs/offer/parallelogram.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+  &__inner {
+    max-width: 728px;
+  }
+  &__title {
+    font-size: 64px;
+    line-height: 77px;
+    color: $color-light;
+    font-weight: 400;
+    max-width: 660px;
+    margin-bottom: 20px;
+  }
+  &__btn {
+    @extend %btn;
+    padding: 14px 24px 19px;
+    font-size: 13px;
+    line-height: 14px;
+    letter-spacing: 2.1px;
+    min-height: 48px;
+  }
+}
+
+.footer {
+  background-color: $bg-special;
+  padding: 64px 0 26px;
+  font-size: 14px;
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+  }
+  &__box {
+    &--main {
+      flex: 0 0 22%;
+    }
+    &--using {
+      flex: 0 0 20%;
+    }
+    &--resources {
+      flex: 0 0 25%;
+    }
+    &--company {
+      flex: 0 0 14%;
+    }
+    &--follow {
+      flex: 0 0 19%;
+    }
+  }
+  &__box-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100%;
+  }
+  &__logo {
+    margin-bottom: 20px;
+    width: 24px;
+    height: 34px;
+  }
+  &__text {
+    line-height: 24px;
+    color: $color-light-special;
+    max-width: 170px;
+  }
+  &__box-btn {
+    font-size: 10px;
+    line-height: 11px;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    border: 2px solid $color-light-special;
+    border-radius: 5px;
+    padding: 12px 17px 13px;
+    color: $color-light;
+    display: inline-block;
+    cursor: pointer;
+    margin-bottom: 4px;
+  }
+  &__box-title {
+    line-height: 19px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: $color-light-special;
+    margin-bottom: 35px;
+    font-weight: 400;
+  }
+  &__copyright {
+    color: $color-light;
+    margin-bottom: 9px;
+  }
+  &__copyright-basic {
+    font-size: 11px;
+    line-height: 21px;
+  }
+  &__copyright-law {
+    font-size: 12px;
+    line-height: 12px;
+    margin-right: 12px;
+  }
+  &__box-link {
+    display: block;
+    font-size: 14px;
+    line-height: 14px;
+    color: $color-light;
+    margin-bottom: 18px;
+    cursor: pointer;
+    &:hover {
+      color: darken($color: $color-light, $amount: 15);
+    }
+    &--new {
+      background: #445260;
+      border-radius: 8px;
+      position: relative;
+      padding: 5px 50px 5px 5px;
+      margin-left: -5px;
+      margin-top: 8px;
+      margin-bottom: 20px;
+      display: inline-block;
+      &::after {
+        position: absolute;
+        content: "";
+        right: 10px;
+        top: 0px;
+        display: block;
+        width: 24px;
+        height: 24px;
+        background: url(../imgs/footer/new.svg);
+        background-size: cover;
+        background-position: center;
+        z-index: 3;
+      }
+    }
+  }
+  &__box-social-link {
+    cursor: pointer;
+  }
+  &__box-social-icon {
+    margin-right: 12px;
+  }
+  &__location {
+    position: absolute;
+    right: 13%;
+    bottom: -54px;
+    z-index: 2;
+  }
+  &__location-plcae {
+    color: $color-light;
+    font-size: 12px;
+    line-height: 21px;
+  }
+}
+
+
+@media (max-width: 1460px) {
+  .experience__example {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 1150px) {
+  .experience__example {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 1050px) {
+  .products {
+    padding: 60px 0;
+    &__wraper {
+      display: block;      
+    }
+    &__aside {
+      max-width: 92%;
+      margin: 0 auto;
+    }
+    &__aside-cell {
+      &:nth-child(odd) {
+        margin-right: 0px;
+      }
+    }
+    &__content {
+      max-width: 100%;
+      margin-bottom: 50px;
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .header {
+    &__navigation {
+      position: relative;
+    }
+    &__navigaiotn-list {
+      display: none;
+      position: absolute;
+      right: 60px;
+      z-index: 5;
+      background: $bg-special;
+      opacity: .96;
+    }
+    &__navigation-item {
+      display: block;
+      font-size: 28px;
+      padding: 6px 20px 8px;
+      border-bottom: 1px solid $bg-color-dark;
+    }
+    &__navigation-label {
+      font-size: 24px;
+      display: block;
+      margin: 0 16px;
+      order: 3;
+    }
+  }
+  #navigation-check:checked ~ .header__navigaiotn-list {
+    display: block;
+  }
+  .first {
+    &__slogan {
+      font-size: 100px;
+      line-height: 110px;
+      padding-right: 20%;
+    }
+    &__business-card {
+      padding: 0 30px 30px;
+      min-height: auto;
+    }
+    &__business-card--front {
+      position: initial;
+      text-align: center;
+    }
+    &__business-card--back {
+      position: initial;
+      text-align: center;
+    }
+  }
+  .company {
+    &__wrapper {
+      flex-wrap: wrap;
+    }
+    &__wrapper-img {
+      flex: 0 0 50%;
+      margin-bottom: 40px;
+      justify-content: space-around;
+    }
+  }
+  .experience {
+    &__advantages-title {
+      max-width: 100%;
+    }
+    &__advantages {
+      display: block;
+    }
+    &__advantages-box {
+      max-width: 600px;
+      padding-left: 50px;
+      padding-right: 30px;
+      margin-bottom: 40px;
+      &:nth-child(1)::before,
+      &:nth-child(2)::before,
+      &:nth-child(3)::before {
+        left: 0px;
+        top: 5px;
+      }
+    }
+  }
+  .custom,
+  .offer {
+    &__wrapper {
+      min-height: 0;
+    background: none;
+    }
+    &__inner {
+      max-width: 100%;
+      margin: 0;
+      padding: 120px 0; 
+    }
+    &__title{
+      max-width: 100%;
+    }
+  }
+  .footer {
+    padding-bottom: 10px;
+    &__wrapper {
+      flex-wrap: wrap;
+    }
+    &__box-wrapper {
+      min-height: 0;
+    }
+    &__text {
+      max-width: 80%;
+      margin-bottom: 20px;
+    }
+    &__box--main {
+      flex: 0 0 100%;
+      min-height: 100px;
+      margin-bottom: 50px;
+    }
+    &__box--using {
+      flex: 0 0 40%;
+      margin-bottom: 50px;
+    }
+    &__box--resources {
+      flex: 0 0 40%;
+      margin-bottom: 50px;
+    }
+    &__box--company {
+      flex: 0 0 20%;
+      margin-bottom: 50px;
+    }
+    &__box--follow {
+      flex: 0 0 100%;
+    }
+  }
+}
+
+
+@media (max-width: 768px) {
+  .first {
+    padding: 60px 0;
+    &__slogan {
+      font-size: 70px;
+      line-height: 80px;
+      padding-right: 0;
+    }
+  } 
+  .company {
+    padding: 60px 0;
+    &__wrapper-img {
+      flex: 0 0 100%;
+    }
+  }
+  .experience {
+    padding: 60px 0;
+    &__text {
+      max-width: 100%;
+    }
+    &__example {
+      display: block;
+      margin-bottom: 100px;
+    }
+    &__example-box {
+      max-width: 100%;
+      text-align: center;
+    }
+  }
+  .offer {
+    &__inner {
+      padding: 60px 0 0;
+    }
+    &__wrapper {
+      &:after {
+        background-image: none
+      }
+    }
+  }
+  .custom__title,
+  .products__title,
+  .experience__title,
+  .offer__title {
+    font-size: 48px;
+    line-height: 1.2;
+  }
+}
+
+@media (max-width: 690px) {
+  .footer {
+    &__box--using {
+      flex: 0 0 50%;
+    }
+    &__box--resources {
+      flex: 0 0 50%;
+    }
+    &__box--company {
+      flex: 0 0 50%;
+    }
+    &__box--follow {
+      flex: 0 0 50%;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .header__logo {
+    width: 120px;
+  }
+  .header__logo-img {
+    width: 100%;
+  }
+  .first__slogan {
+    font-size: 42px;
+  }
+  .products {
+    &__aside {
+      max-width: 100%;
+      margin: 0 auto;
+      flex-wrap: nowrap;
+    }
+    &__aside-cell {
+      transform: scale(0.7);
+      min-width: auto;
+    }
+  }
+  .experience__advantages-title {
+    font-size: 24px;
+    margin-bottom: 6px;
+  }
+  .footer {
+    &__box--main {
+      flex: 0 0 100%;
+    }
+    &__box--using {
+      flex: 0 0 100%;
+    }
+    &__box--resources {
+      flex: 0 0 100%;
+    }
+    &__box--company {
+      flex: 0 0 100%;
+    }
+    &__box--follow {
+      flex: 0 0 100%;
+      margin-bottom: 50px;
+    }
+  }
+  .custom__title,
+  .products__title,
+  .experience__title,
+  .offer__title {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 400px) {
+  .products__aside-cell {
+    transform: scale(0.4);
+    width: 17%;
+  }
+  .first__title {
+    font-size: 24px;
+    line-height: 1.4;
+  }
+}

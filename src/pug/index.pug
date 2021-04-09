@@ -1,0 +1,213 @@
+extends layout/layout
+
+block vars
+    - var pageTitle = 'Главная страница'
+    - var pageBodyClass = 'homepage'
+    - var pageHeaderClass = ''
+
+block content
+    header.header
+        .container
+            .header__wrapper
+                a.header__logo
+                    img(src="../assets/imgs/logo.svg", alt="logo").header__logo-img
+                nav.header__navigation
+                    input(type="checkbox", id="navigation-check").header__navigation-check
+                    label(for="navigation-check").header__navigation-label &#9776;
+                    ul.header__navigaiotn-list
+                        li.header__navigation-item 
+                            a(href="#").header__navigation-link Sell online
+                        li.header__navigation-item 
+                            a(href="#").header__navigation-link Fundraise
+                        li.header__navigation-item 
+                            a(href="#").header__navigation-link Customize
+                        li.header__navigation-item 
+                            a(href="#").header__navigation-link Explore
+                    a(href="#").header__login Log in
+   
+    section.first
+        .container
+            .first__slogan-layer
+                .first__slogan Take your merch to the next level
+            .first__gallery 
+                .first__gallery-img
+                    img(src="../assets/imgs/main/foto-1.jpg", alt="foto").first__gallery-picture
+                .first__gallery-img
+                    img(src="../assets/imgs/main/foto-2.jpg", alt="foto").first__gallery-picture
+                .first__gallery-img
+                    img(src="../assets/imgs/main/foto-3.jpg", alt="foto").first__gallery-picture
+                .first__gallery-img
+                    img(src="../assets/imgs/main/foto-4.jpg", alt="foto").first__gallery-picture
+                .first__gallery-img
+                    img(src="../assets/imgs/main/foto-5.jpg", alt="foto").first__gallery-picture
+            .first__title-layer
+                h1.first__title Introducing Bonfire X—the exclusive merch concierge service for the world’s top creators.
+            a(href="#").first__btn Unlock access
+            .first__business-card
+                .first__business-card--front
+                    img(src="../assets/imgs/main/business-card-front-zaglushka.svg", alt="business card").first__business-card-img
+                .first__business-card--back
+                    img(src="../assets/imgs/main/ebanaia-kartochka.svg", alt="business card").first__business-card-img
+   
+    .company 
+        .container
+            .company__slogan Trusted by top creators
+            .company__wrapper
+                .company__wrapper-img
+                    img(src="../assets/imgs/company/XOBrooklynne.svg", alt="").company__logo
+                .company__wrapper-img
+                    img(src="../assets/imgs/company/THE.svg", alt="").company__logo
+                .company__wrapper-img
+                    img(src="../assets/imgs/company/The-food-ranger.svg", alt="").company__logo
+                .company__wrapper-img
+                    img(src="../assets/imgs/company/Kristina-Kurmic.svg", alt="").company__logo
+
+    section.custom
+        .container
+            .custom__wrapper
+                .custom__inner
+                    .custom__slogan Lock in the extra profits
+                    h2.custom__title Custom Revenue Splits
+                    p.custom__text Bonfire X members get exclusive access to our straightforward boosted revenue sharing program that is individually customized for each creator.
+
+    section.products
+        .container
+            .products__wraper 
+                .products__aside
+                    .products__aside-cell
+                        img(src="../assets/imgs/products/icon-1.svg", alt="product icon").products__aside-icon
+                    .products__aside-cell
+                        img(src="../assets/imgs/products/icon-2.svg", alt="product icon").products__aside-icon
+                    .products__aside-cell
+                        img(src="../assets/imgs/products/icon-3.svg", alt="product icon").products__aside-icon
+                    .products__aside-cell
+                        img(src="../assets/imgs/products/icon-4.svg", alt="product icon").products__aside-icon
+                    .products__aside-cell
+                        img(src="../assets/imgs/products/icon-5.svg", alt="product icon").products__aside-icon
+                    .products__aside-cell
+                        img(src="../assets/imgs/products/icon-6.svg", alt="product icon").products__aside-icon
+                .products__content
+                    .products__slogan More than just t-shirts
+                    h2.products__title Unlock Exclusive Products
+                    p.products__text With Bonfire X, you’ll unlock access to premium products from top merchandising brands. Your custom merch can be tailored to your exact needs.
+                .products__aside.products__aside--reverse
+                    .products__aside-cell
+                        img(src="../assets/imgs/products/icon-7.svg", alt="product icon").products__aside-icon
+                    .products__aside-cell
+                        img(src="../assets/imgs/products/icon-8.svg", alt="product icon").products__aside-icon
+                    .products__aside-cell
+                        img(src="../assets/imgs/products/icon-9.svg", alt="product icon").products__aside-icon
+                    .products__aside-cell
+                        img(src="../assets/imgs/products/icon-10.svg", alt="product icon").products__aside-icon
+                    .products__aside-cell
+                        img(src="../assets/imgs/products/icon-11.svg", alt="product icon").products__aside-icon
+                    .products__aside-cell
+                        img(src="../assets/imgs/products/icon-12.svg", alt="product icon").products__aside-icon
+
+    section.experience
+        .container 
+            .experience__slogan Designed just for you
+            h2.experience__title Customized Selling Experience
+            .experience__example
+                .experience__example-box
+                    img(src="../assets/imgs/experience/experience-1.jpg", alt="").experience__img
+                .experience__example-box 
+                    p.experience__text Our in-house design team will work with you to create a custom store that seamlessly represents your brand.
+                    img(src="../assets/imgs/experience/experience-2.jpg", alt="").experience__img
+            .experience__advantages
+                .experience__advantages-box
+                    h3.experience__advantages-title Free marketing samples
+                    p.experience__advantages-text We’ll send you free samples of your merch to use in your marketing materials.
+                .experience__advantages-box
+                    h3.experience__advantages-title Dedicated account management
+                    p.experience__advantages-text 1-on-1 support to help you plan and execute your product launches.
+                .experience__advantages-box
+                    h3.experience__advantages-title Evergreen campaigns
+                    p.experience__advantages-text Decide which campaigns are always active so you never miss a sale.
+
+    section.offer
+        .container 
+            .offer__wrapper
+                .offer__inner
+                    h2.offer__title Join Bonfire X to take your custom merch to the next level.
+                    a(href="#").offer__btn Unlock access
+
+    footer.footer
+        .container 
+            .footer__wrapper
+                .footer__box.footer__box--main
+                    img(src="../assets/imgs/logo-flower.svg", alt="logo").footer__logo
+                    .footer__box-wrapper 
+                        .footer__text Where the world goes for premium custom shirts
+                        .footer__copyright
+                            .footer__copyright-basic © 2021 Bonfire.com
+                            span.footer__copyright-law DMCA
+                            span.footer__copyright-law Trademark Takedown
+                        
+                .footer__box.footer__box--using
+                    h4.footer__box-title Using bonfire
+                    .footer__box-wrapper 
+                        ul.footer__box-list
+                            li.footer__box-item
+                                a(href="#").footer__box-link Sell shirts online
+                            li.footer__box-item
+                                a(href="#").footer__box-link Start a fundraiser
+                            li.footer__box-item
+                                a(href="#").footer__box-link Order custom shirts
+                            li.footer__box-item
+                                a(href="#").footer__box-link YouTube creators
+                            li.footer__box-item
+                                a(href="#").footer__box-link Online stores
+                            li.footer__box-item
+                                a(href="#").footer__box-link Log In
+                            li.footer__box-item
+                                a(href="#").footer__box-link Track my order
+                        .footer__box-btn-wrap 
+                            a.footer__box-btn Start a campaign
+                .footer__box.footer__box--resources
+                    h4.footer__box-title Resources
+                    ul.footer__box-list
+                        li.footer__box-item
+                            a(href="#").footer__box-link Help center
+                        li.footer__box-item
+                            a(href="#").footer__box-link Design templates
+                        li.footer__box-item
+                            a(href="#").footer__box-link Request a custom design
+                        li.footer__box-item
+                            a(href="#").footer__box-link Product catalog
+                        li.footer__box-item
+                            a(href="#").footer__box-link Pricing calculator
+                        li.footer__box-item
+                            a(href="#").footer__box-link Blog
+                        li.footer__box-item
+                            a(href="#").footer__box-link Stories
+                        li.footer__box-link.footer__box-link--new Bonfire + Classy integration
+                .footer__box.footer__box--company
+                    h4.footer__box-title Company
+                    ul.footer__box-list
+                        li.footer__box-item
+                            a(href="#").footer__box-link About
+                        li.footer__box-item
+                            a(href="#").footer__box-link Careers
+                        li.footer__box-item
+                            a(href="#").footer__box-link Reviews
+                        li.footer__box-item
+                            a(href="#").footer__box-link Contact
+                        li.footer__box-item
+                            a(href="#").footer__box-link Privacy
+                        li.footer__box-item
+                            a(href="#").footer__box-link Terms
+                .footer__box.footer__box--follow
+                    h4.footer__box-title Follow us
+                    .footer__box-social
+                        a(href="#").footer__box-social-link 
+                            img(src="../assets/imgs/socials/facebook.svg", alt="facebook").footer__box-social-icon
+                        a(href="#").footer__box-social-link 
+                            img(src="../assets/imgs/socials/pinterest.svg", alt="pinterest").footer__box-social-icon
+                        a(href="#").footer__box-social-link 
+                            img(src="../assets/imgs/socials/instagram.svg", alt="instagram").footer__box-social-icon
+                        a(href="#").footer__box-social-link 
+                            img(src="../assets/imgs/socials/twitter.svg", alt="twitter").footer__box-social-icon
+                .footer__location
+                    img(src="../assets/imgs/footer/map.svg", alt="location").footer__location-map 
+                    .footer__location-plcae Based in Richmond, VA
